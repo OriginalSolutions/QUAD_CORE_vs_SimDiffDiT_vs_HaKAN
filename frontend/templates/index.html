@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>HEXA-CORE AI SYSTEM</title>
+    <!-- Wymuszamy odświeżenie stylów dopisując ?v=3 -->
+    <link rel="stylesheet" href="/static/style.css?v=4">
+    <script src="https://fastly.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="loading-overlay" style="visibility: hidden;">
+        <div class="spinner"></div>
+        <div style="color:#00e676; margin-top:20px; font-weight:bold; font-family:monospace;">RETRAINING 5 MODELS...</div>
+    </div>
+
+    <div id="header">
+        <div class="header-info-block">
+            <div class="main-title">HEXA-CORE AI</div>
+            <!-- Link do GitHuba został stąd usunięty -->
+            <div class="price-val" id="last-price">--</div>
+            <div class="status-line">STATUS: <span id="server-status">CONNECTING</span></div>
+        </div>
+        
+        <div class="ai-panel">
+            <div class="ai-row"><div class="ai-label">Monte Carlo</div><div id="mc-specs" class="ai-details"></div><div class="ai-val" id="mc-val">--</div></div>
+            <div class="ai-row"><div class="ai-label">Random Forest</div><div id="rf-math" class="ai-details"></div><div class="ai-val" id="rf-val">--</div></div>
+            <div class="ai-row"><div class="ai-label">KAN (v2.0)</div><div class="ai-details">Splines</div><div class="ai-val" id="kan-val">--</div></div>
+            <div class="ai-row"><div class="ai-label">Neural Trend</div><div class="ai-details">Network</div><div class="ai-val" id="net-val">--</div></div>
+            <div class="ai-row"><div class="ai-label" style="color:#d400ff">SimDiff DiT</div><div class="ai-details">Diffusion</div><div class="ai-val" id="sim-val">--</div></div>
+            <div class="ai-row"><div class="ai-label" style="color:#ff9100">HaKAN</div><div class="ai-details">Hahn Poly</div><div class="ai-val" id="hakan-val">--</div></div>
+            
+            <div class="consensus-row"><div class="con-label">Main Consensus:</div><div class="con-val" id="final-val">--</div></div>
+            <div class="consensus-row" style="border-top:1px dashed #333"><div class="con-label" style="color:#d400ff">SimDiff Consensus:</div><div class="con-val" id="sim-final-val">--</div></div>
+            <div class="consensus-row" style="border-top:1px dashed #333"><div class="con-label" style="color:#ff9100">HaKAN Consensus:</div><div class="con-val" id="hakan-final-val">--</div></div>
+        </div>
+    </div>
+
+    <div id="chart-container">
+        <div id="chart-price"></div>
+        <div id="chart-pnl"></div>
+    </div>
+
+    <div id="footer-section">
+        <!-- Guziki CSV -->
+        <div class="controls-box">
+            <a href="/download-csv" class="download-btn btn-main">Main CSV</a>
+            <a href="/download-simdiff-csv" class="download-btn btn-simdiff">SimDiff CSV</a>
+            <a href="/download-hakan-csv" class="download-btn btn-hakan">HaKAN CSV</a>
+        </div>
+        
+        <!-- Ładowanie treści tekstowej -->
+        <div class="disclaimer-section">
+            {% include 'disclaimer.txt' ignore missing %}
+        </div>
+
+        <!-- ====== NOWE MIEJSCE LINKU DO GITHUBA (SAM DÓŁ) ====== -->
+        <div class="github-footer">
+            <a href="https://github.com/OriginalSolutions" target="_blank" class="repo-link">
+                https://github.com/OriginalSolutions
+            </a>
+        </div>
+        <!-- ===================================================== -->
+    </div>
+
+    <script src="/static/script.js?v=4"></script>
+</body>
+</html>

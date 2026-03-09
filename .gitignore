@@ -1,6 +1,17 @@
+# --- Ignorowane foldery ---
 venv/
 __pycache__/
-*.pyc
+*/__pycache__/
+
+# --- Tymczasowe pliki Pythona ---
+*.py[cod]
+*$py.class
+
+# --- Logi (nie wysyłamy logów aktywności na GitHuba) ---
+*.log
+visitors_activity.log
 app.log
-logs.txt
+
+# --- Zabezpieczenie systemowe (Windows/Mac) ---
 .DS_Store
+Thumbs.db

@@ -1,0 +1,260 @@
+:root { 
+    --bg: #0a0a0a; 
+    --border: #222; 
+    --accent: #00e676; 
+}
+body { 
+    margin: 0; 
+    background: var(--bg); 
+    color: #ccc; 
+    font-family: sans-serif; 
+    overflow-x: hidden; 
+}
+
+#header {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: stretch;
+    padding: 10px 15px; 
+    background: #111; 
+    border-bottom: 1px solid var(--border);
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    min-height: auto; 
+    gap: 15px; 
+}
+
+.header-info-block { 
+    flex: 1 1 180px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.main-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.price-val { 
+    font-size: clamp(28px, 4vw, 38px); 
+    font-weight: bold; 
+    color: #fff; 
+    font-family: monospace; 
+    margin: 2px 0; 
+}
+
+.status-line {
+    font-size: 12px;
+    color: #888;
+}
+
+.ai-panel {
+    flex: 3 1 400px; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 8px;
+    background: #181818; 
+    padding: 10px; 
+    border-radius: 6px; 
+    border: 1px solid var(--border);
+}
+
+.ai-row, .consensus-row {
+    display: flex; 
+    flex-direction: column; 
+    border-bottom: 1px solid #222; 
+    padding: 6px 8px;
+    min-height: 40px; 
+    justify-content: space-between;
+}
+.consensus-row { 
+    border-top: 1px solid #444; 
+    border-bottom: none; 
+    background: rgba(0, 230, 118, 0.05); 
+    border-radius: 4px;
+}
+
+.ai-label { font-size: 10px; font-weight: bold; color: #fff; text-transform: uppercase; }
+.ai-details { 
+    font-size: 9px; 
+    color: #555; 
+    font-family: monospace; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+.ai-val { font-size: 14px; font-weight: bold; text-align: right; margin-top: 4px; }
+
+#chart-container { 
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+}
+#chart-price { 
+    width: 100%; 
+    height: 55vh; 
+    min-height: 350px; 
+    background: #0a0a0a; 
+}
+#chart-pnl { 
+    width: 100%; 
+    height: 35vh; 
+    min-height: 250px; 
+    border-top: 4px solid #222; 
+    background: #0a0a0a; 
+}
+
+.up { color: var(--accent); } 
+.down { color: #ff1744; } 
+.neutral { color: #555; }
+
+#loading-overlay { 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.85); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 9999; 
+    visibility: hidden; 
+}
+
+#footer-section {
+    padding: 20px 15px 40px 15px;
+    background: #0a0a0a;
+}
+
+.controls-box {
+    display: flex;               
+    justify-content: center;     
+    align-items: center;         
+    gap: 15px;                   
+    flex-wrap: wrap;             
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #111;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: 1px solid;
+    transition: all 0.3s ease;  
+}
+
+.btn-main { color: var(--accent); border-color: var(--accent); }
+.btn-main:hover { background-color: var(--accent); color: #000; }
+
+.btn-simdiff { color: #d400ff; border-color: #d400ff; }
+.btn-simdiff:hover { background-color: #d400ff; color: #fff; }
+
+.btn-hakan { color: #ff9100; border-color: #ff9100; }
+.btn-hakan:hover { background-color: #ff9100; color: #000; }
+
+.disclaimer-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: sans-serif;
+}
+
+.github-footer {
+    text-align: center;
+    margin-top: 15px;
+}
+.repo-link {
+    color: var(--accent); 
+    text-decoration: none;
+    font-size: 13px;
+    font-family: monospace;
+    transition: opacity 0.3s ease, text-decoration 0.3s ease;
+}
+.repo-link:hover {
+    opacity: 0.8;
+    text-decoration: underline; 
+}
+
+/* === ZMIANA ZMNIEJSZAJĄCA EKRAN (np. tablet) === */
+@media (max-width: 850px) {
+    #header {
+        flex-direction: column; 
+        position: relative; 
+    }
+    /* KLUCZOWA POPRAWKA - usuwa 180px wymuszonej wysokości (pustej przestrzeni) */
+    .header-info-block, .ai-panel {
+        flex: 1 1 auto; 
+    }
+}
+
+/* === MODYFIKACJE WYŁĄCZNIE DLA SMARTFONA === */
+@media (max-width: 600px) {
+    
+    #header {
+        /* Odklejamy od góry i mocno docinamy od dołu do kafelków */
+        padding: 20px 15px 8px 15px; 
+        gap: 8px; 
+    }
+
+    .header-info-block {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px; 
+        margin-bottom: 5px; /* Delikatny odstęp dla tekstu */
+    }
+    
+    .main-title {
+        order: 1;
+        font-size: 15px;
+        margin: 0;
+    }
+    .main-title::after { content: none; }
+    
+    .status-line {
+        order: 2;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .price-val {
+        order: 3;
+        font-size: 16px; 
+        margin: 0;
+    }
+    .price-val::after { content: none; }
+
+    .ai-panel {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .consensus-row {
+        grid-column: span 2;
+    }
+    #chart-price { height: 50vh; }
+    #chart-pnl { height: 40vh; }
+    
+    .download-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    
+    .repo-link {
+        font-size: 11px;
+        word-break: break-all;
+    }
+}
