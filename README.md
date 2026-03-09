@@ -59,6 +59,7 @@ This model processes two or more independent time-series, learning cross-correla
     
 *   **Geothermal Engineering (12km+ boreholes) for supercritical water extraction:** 
     *   **A. Innovative Materials (Filaments):** Production of high-performance, lightweight, and resilient filaments for piping, ensuring maximum supramolecular bonding stability after cooling.
+      
     *   **B. Rock Vaporization Methods:** Comparing the efficiency of various drilling techniques (e.g., thermomechanical, chemical, plasma, laser, or microwave). The system monitors "balance curves" (e.g., penetration rate vs. energy cost) of all methods. When one technology approaches its physical limit under specific geological conditions, the system generates a signal to switch to a higher-potential method or optimize process parameters — including **beam configuration, operating frequency, polarization, and power density** — to maintain peak process efficiency.
 
 ---
