@@ -21,6 +21,7 @@ Long-term observations confirm that strategy balance curves exhibit a tendency t
 1. **Winner vs. Loser Analysis:** I track which strategy is gaining an edge (Winner) and which is currently underperforming (Loser).
 2. **Crossover Logic:** I generate a trading signal only when the strategies are in a "counterweight" phase.
 3. **Multiplier Algorithm:**
+   
     *   **Winning Strategy (Winner):** Assigned a multiplier of **-1**. I treat its signal as a contrarian indicator, anticipating a correction to its over-optimism.
     *   **Losing Strategy (Loser):** Assigned a multiplier of **+1**. I follow its signal, assuming it has reached a pivot point and is primed for a rebound.
     *   **Condition:** A signal is generated **only** when both strategies indicate opposite directions. If they are in agreement, the system remains in a neutral, wait-and-see state.
