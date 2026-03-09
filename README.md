@@ -54,9 +54,9 @@ In this model, the system analyzes relations between the balance curves of AI po
 This model processes two or more independent time-series, learning cross-correlations. This requires adjusting the model's input dimensionality (`input_dim`) to analyze how parameters of one process influence another.
 
 *   **Supply Chain:** Analyzing discrepancies between demand and supply. The system detects when a "Just-in-Time" procurement policy loses efficiency relative to a "Safety Buffer" policy, adjusting inventory levels in real-time.
-*   
+   
 *   **Retail/FMCG:** Detecting moments when an underperforming product group gains ground over another, allowing for dynamic stock optimization.
-*   
+    
 *   **Geothermal Engineering (12km+ boreholes) for supercritical water extraction:** 
     *   **A. Innovative Materials (Filaments):** Production of high-performance, lightweight, and resilient filaments for piping, ensuring maximum supramolecular bonding stability after cooling.
     *   **B. Rock Vaporization Methods:** Comparing the efficiency of various drilling techniques (e.g., thermomechanical, chemical, plasma, laser, or microwave). The system monitors "balance curves" (e.g., penetration rate vs. energy cost) of all methods. When one technology approaches its physical limit under specific geological conditions, the system generates a signal to switch to a higher-potential method or optimize process parameters — including **beam configuration, operating frequency, polarization, and power density** — to maintain peak process efficiency.
